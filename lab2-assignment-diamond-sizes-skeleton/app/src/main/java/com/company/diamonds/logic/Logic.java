@@ -46,7 +46,82 @@ public class Logic
     public void process(int size) {
 
         // TODO -- add your code here
+        int stroka = (size * 2) - 1;
+        int stolbec = (size * 2) + 2;
+        int b = 0;
+        mOut.print("+");
+        for (int i = 1; i <= size * 2; i++) {
+            mOut.print("-");
+        }
+        mOut.print("+\n");
+
+        for (int i = 1; i <= stroka; i++) {
+            mOut.print("|");
+
+            if (i <= stroka - size)
+                for (int j = 0; j < size - i; j++) {
+                    mOut.print(" ");
+                }
+            else
+                for (int j = 1; j <= i-size;j++) {
+                    mOut.print(" ");
+                }
+
+            if (i <= stroka - size)
+                mOut.print("/");
+            else
+            if (i == size)
+                mOut.print("<");
+            else
+                mOut.print("\\");
+
+            if ( i< size ){
+                for (int j = 0; j < stolbec - 4 - ((size - i) * 2); j++) {
+                    if (i % 2 != 0)
+                        mOut.print("-");
+                    else
+                        mOut.print("=");
+                }
+            }
+
+            if ( i>=size)
+                for (int j = 0; j < stolbec - 4 - ((i-size)*2); j++) {
+                    if (i % 2 != 0)
+                        mOut.print("-");
+                    else
+                        mOut.print("=");
+                }
+            if (i <= stroka - size)
+                mOut.print("\\");
+            else
+            if (i == size)
+                mOut.print(">");
+            else
+            if (i >= stroka - size)
+                mOut.print("/");
+
+            if (i <= stroka - size){
+                for (int j = 0; j < size - i; j++) {
+                    mOut.print(" ");
+                }
+            }
+            else
+                for (int j = 1; j <= i-size;j++) {
+                    mOut.print(" ");
+                }
+
+            mOut.print("|");
+
+            mOut.print("\n");
+        }
+
+        mOut.print("+");
+        for (int i = 1; i <= size * 2; i++) {
+            mOut.print("-");
+        }
+        
+        mOut.print("+");
+
 
     }
-
 }
